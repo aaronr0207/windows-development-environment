@@ -58,6 +58,7 @@ choco install pdf24 -y
 choco install hostsman -y
 choco install spotify -y
 choco install postman -y
+choco install androidstudio -y
 
 
 Update-Environment-Path
