@@ -82,5 +82,14 @@ vagrant plugin install vagrant-winnfsd
 # Si se va a usar el sistema de archivos nfs hay que ejecutar los permisos (nota keep)
 # La configuración del yaml hay que hacerla manualmente de momento
 
+# Hacer homestead invocable desde cualquier ubicacion
+
+cd ~
+touch .bash_profile
+
+echo function homestead() {> .bash_profile
+echo     ( cd ~/Homestead && vagrant $* )>> .bash_profile
+echo }>> .bash_profile
+
 
 Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la versión de phpstorm)"
