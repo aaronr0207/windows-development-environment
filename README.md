@@ -50,3 +50,6 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
 * Automatizar configuración de `VSCode` para `Laravel`
 * Permitir elegir en el shell si se instala `VSCode` o `PhPStorm`
 * Incluir más plugins para `hyper` 
+* Quitar los programas anclados por defecto y anclar los que se usan
+* Limpiar escritorio para quitar los iconos de los programas que se instalan
+* Incluir software adicional como `vlc` o más herramientas de desarrollo
