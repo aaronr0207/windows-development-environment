@@ -1,6 +1,6 @@
 # Windows Development Environment
 
-Prepara un entorno Windows con los programas necesarios para desarrollar con `Laravel` como lenguaje + `Homestead` como entorno virtual y `PhPStorm` como IDE  . Ejecuta `env-windows` en PowerShell y ve a por un café.
+Script que prepara un entorno Windows con los programas necesarios para desarrollar con `Laravel` como lenguaje + `Homestead` como entorno virtual y `PhPStorm` como IDE  . Ejecuta `env-windows` en PowerShell y ve a por un café.
 
 # Contenido
 
