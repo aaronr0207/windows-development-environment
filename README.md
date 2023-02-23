@@ -42,3 +42,4 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
 * Instalar `VSCode`
 * Automatizar configuración de `VSCode` para `Laravel`
 * Permitir elegir en el shell si se instala `VSCode` o `PhPStorm`
+* Incluir más plugins para `hyper` 
