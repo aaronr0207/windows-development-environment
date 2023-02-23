@@ -43,7 +43,7 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
   * Actualiza el tema de windows con el tema oscuro
   * Clona la última versión de `homestead` y lo inicializa
   * Instala el plugin `vagrant-winnfsd` para montar carpetas en `nfs`
-* `vagrant-winnfsd` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
+* `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # TODO:
 * Instalar `VSCode`
