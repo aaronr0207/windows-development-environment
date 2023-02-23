@@ -18,7 +18,7 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
   * heidisql 
   * hyper 
   * logitech-options 
-  * notepadplusplus.install 
+  * notepadplusplus
   * phpstorm 2020.2.4 
   * putty 
   * kitty 
