@@ -8,8 +8,8 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
   * adobereader 
   * googlechrome 
   * firefox 
-  * vcredist140 --version 14.34.319
-  * google-drive-file-stream --vers
+  * vcredist140 14.34.319
+  * google-drive-file-stream 56.0.11.2022 
   * 7zip
   * anydesk 
   * git 
@@ -19,7 +19,7 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
   * hyper 
   * logitech-options 
   * notepadplusplus.install 
-  * phpstorm --version 2020.2.4 
+  * phpstorm 2020.2.4 
   * putty 
   * kitty 
   * sublimetext4 
