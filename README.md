@@ -37,6 +37,13 @@ Prepara un entorno Windows con los programas necesarios para desarrollar con `La
 * `fix_ls_colors_zsh.md` tutorial para arreglar el contraste de los colores de las carpetas al hacer ls cuando se utiliza `zsh` junto a `hyper` 
 * `wallpaper.jpg` un wallpaper oscuro minimalista
 * `vscode-extensions.sh` ejemplo de script para automatizar la configuración de VSCode (para futuras actualizaciones de este repo)
+* Configuraciones adicionales:
+  * Actualiza el `$PATH` tras instalar el software
+  * Añade un `.bash_profile` con el alias para utilizar el comando `homestead` desde cualquier ruta en el terminal
+  * Actualiza el tema de windows con el tema oscuro
+  * Clona la última versión de `homestead` y lo inicializa
+  * Instala el plugin `vagrant-winnfsd` para montar carpetas en `nfs`
+* `vagrant-winnfsd` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # TODO:
 * Instalar `VSCode`
