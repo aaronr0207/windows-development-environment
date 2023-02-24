@@ -43,6 +43,8 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * Actualiza el tema de windows con el tema oscuro
   * Clona la última versión de `homestead` y lo inicializa
   * Instala el plugin `vagrant-winnfsd` para montar carpetas en `nfs`
+  * Cambia el wallpaper por uno oscuro minimalista
+  * Quita los iconos anclados por defecto en la barra de tareas
 * `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # TODO:
