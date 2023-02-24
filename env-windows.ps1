@@ -66,6 +66,13 @@ Update-Environment-Path
 # Poner el tema oscuro
 start "" "C:\Windows\Resources\Themes\themeB.theme"
 
+# Cambiar wallpaper
+cd ~
+wget -O wallpaper.jpg https://github.com/aaronr0207/windows-development-environment/blob/main/wallpaper.jpg?raw=true
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "~\wallpaper.jpg" /f
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+rm ~\wallpaper.jpg
+
 # Windows Subsystem for Linux
 # wsl --install
 
