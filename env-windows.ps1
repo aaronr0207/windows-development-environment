@@ -73,7 +73,16 @@ reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "~\w
 RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 rm ~\wallpaper.jpg
 
-# Windows Subsystem for Linux
+# Quitar los items anclados de la barra de tareas por defecto
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v Favorites /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "FavoritesResolve" /t REG_DWORD /d 0 /f
+powershell -Command 'Remove-Item -Path "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*" -Force'
+
+# Reiniciar el proceso del explorador para que tengan efecto los cambios
+taskkill /f /im explorer.exe
+start explorer.exe
+
+# Windows Subsystem for Linux (de momento desactivado)
 # wsl --install
 
 # Homestead basic setup
