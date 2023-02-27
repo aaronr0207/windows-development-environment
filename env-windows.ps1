@@ -33,6 +33,35 @@ Update-Environment-Path
 # Utils
 Get-Command -Module Microsoft.PowerShell.Archive
 
+# Elegir IDE y versión
+$choice_ide = Read-Host "Instalar PHPStorm, VSCode o ambos (1,2 o 3)"
+
+if ($choice_ide -eq "1") {
+    $choice_version = Read-Host "Instalar última versión de PHPStorm o 2020.2.4 (versión licencia) (1 o 2)"
+    
+    if ($choice_version -eq "1") {
+        choco install phpstorm
+    } elseif ($choice_version -eq "2") {
+        choco install phpstorm 2020.2.4
+    } else {
+        Write-Host "Opción no válida, elige 1 o 2"
+    }
+} elseif ($choice_ide -eq "2") {
+   choco install vscode
+} elseif ($choice_ide -eq "3") {
+   choco install vscode
+     $choice_version = Read-Host "Instalar última versión de PHPStorm o 2020.2.4 (versión licencia) (1 o 2)"
+    if ($choice_version -eq "1") {
+        choco install phpstorm
+    } elseif ($choice_version -eq "2") {
+        choco install phpstorm 2020.2.4
+    } else {
+        Write-Host "Opción no válida, elige 1 o 2"
+    }
+}else {
+    Write-Host "Opción no válida, elige 1 (PHPStorm), 2 (VSCode) o 3 (ambos)"
+}
+
 choco install adobereader -y
 choco install googlechrome -y
 choco install firefox -y
@@ -47,7 +76,6 @@ choco install heidisql -y
 choco install hyper -y
 choco install logitech-options -y
 choco install notepadplusplus.install -y
-choco install phpstorm --version 2020.2.4 -y
 choco install putty -y
 choco install kitty -y
 choco install sublimetext4 -y
