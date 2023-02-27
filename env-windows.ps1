@@ -79,6 +79,7 @@ choco install spotify -y
 choco install postman -y
 choco install androidstudio -y
 choco install vlc -y
+choco install sqlitebrowser -y
 
 Update-Environment-Path
 
