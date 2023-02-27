@@ -78,7 +78,7 @@ choco install hostsman -y
 choco install spotify -y
 choco install postman -y
 choco install androidstudio -y
-
+choco install vlc -y
 
 Update-Environment-Path
 
@@ -127,5 +127,18 @@ echo function homestead() {> .bash_profile
 echo     ( cd ~/Homestead && vagrant $* )>> .bash_profile
 echo }>> .bash_profile
 
+
+# Limpiar iconos del escritorio, menos la papelera de reciclaje
+
+$desktop = [Environment]::GetFolderPath('Desktop')
+$recycle_bin = [Shell32.Shell]::RecycleBin
+$desktop_items = Get-ChildItem $desktop | Where-Object { $_.Extension -eq ".lnk" }
+
+foreach ($item in $desktop_items) {
+    $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut($item.FullName)
+    if ($shortcut.TargetPath -ne $recycle_bin.Path) {
+        Remove-Item $item.FullName
+    }
+}
 
 Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la versión de phpstorm)"
