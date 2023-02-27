@@ -31,6 +31,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * spotify 
   * postman 
   * androidstudio 
+  * vlc
 
 * `Homestead_config_example.yaml` un archivo de configuración básico para `homestead` como ejemplo
 * `hyper_config_basic` un archivo de configuración para `hyper` que pone `git-bash` como shell del terminal y un tema básico
@@ -48,10 +49,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
 * `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # TODO:
-* Instalar `VSCode`
 * Automatizar configuración de `VSCode` para `Laravel`
-* Permitir elegir en el shell si se instala `VSCode` o `PhPStorm`
 * Incluir más plugins para `hyper` 
 * Quitar los programas anclados por defecto y anclar los que se usan
-* Limpiar escritorio para quitar los iconos de los programas que se instalan
-* Incluir software adicional como `vlc` o más herramientas de desarrollo
+* Incluir software adicional o más herramientas de desarrollo
