@@ -14,6 +14,36 @@ function Push-User-Path($userPath) {
 }
 
 #
+# Comprobar permisos de administrador
+#
+If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Warning "Debes ejecutar el script como administrador"
+    Exit
+}
+
+#
+# Quitar OneDrive
+#
+
+# Remove OneDrive from the computer
+Get-AppxPackage *OneDrive* | Remove-AppxPackage
+
+# Disable OneDrive from running on startup
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -Value 1
+
+# Disable OneDrive from running in the background
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSync" -Value 1
+
+# Remove OneDrive folder from the user's profile
+$OneDrivePath = "$env:USERPROFILE\OneDrive"
+If (Test-Path $OneDrivePath) {
+    Remove-Item $OneDrivePath -Recurse
+}
+
+Write-Output "OneDrive eliminado y desactivado."
+
+
+#
 # Package Managers
 #
 
@@ -141,5 +171,10 @@ foreach ($item in $desktop_items) {
         Remove-Item $item.FullName
     }
 }
+
+# Crear carpetas para workspace
+cd ~
+mkdir workspace
+mkdir workspace-android
 
 Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la versión de phpstorm)"

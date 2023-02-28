@@ -36,7 +36,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
 
 * `Homestead_config_example.yaml` un archivo de configuración básico para `homestead` como ejemplo
 * `hyper_config_basic` un archivo de configuración para `hyper` que pone `git-bash` como shell del terminal y un tema básico
-* `fix_ls_colors_zsh.md` tutorial para arreglar el contraste de los colores de las carpetas al hacer ls cuando se utiliza `zsh` junto a `hyper` 
+* `hyper_fix_ls_colors_zsh.md` tutorial para arreglar el contraste de los colores de las carpetas al hacer ls cuando se utiliza `zsh` junto a `hyper` 
 * `wallpaper.jpg` un wallpaper oscuro minimalista
 * `vscode-extensions.sh` ejemplo de script para automatizar la configuración de VSCode (para futuras actualizaciones de este repo)
 * Configuraciones adicionales:
@@ -47,7 +47,17 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * Instala el plugin `vagrant-winnfsd` para montar carpetas en `nfs`
   * Cambia el wallpaper por uno oscuro minimalista
   * Quita los iconos anclados por defecto en la barra de tareas
+  * Quita `OneDrive` y lo deshabilita
 * `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
+
+# Uso:
+
+* Abre un powershell con privilegios de administrador y ubicate en la carpeta donde tengas el proyecto clonado
+* Ejecuta el script:
+
+```
+.\env-windows.ps1
+```
 
 # TODO:
 * Automatizar configuración de `VSCode` para `Laravel`
