@@ -42,7 +42,27 @@ If (Test-Path $OneDrivePath) {
 
 Write-Output "OneDrive eliminado y desactivado."
 
+#
+# Quitar Cortana
+#
 
+# Disable Cortana
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
+
+# Stop Cortana processes
+Stop-Process -Name "SearchUI"
+
+# Uninstall Cortana
+Get-AppxPackage Microsoft.549981C3F5F10 | Remove-AppxPackage
+
+Write-Output "Cortana eliminado y desactivado."
+
+#
+# Quitar Sugerencias de Windows
+#
+# Disable "Get even more out of Windows" suggestion
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338393Enabled" -Type DWord -Value 0
+Write-Output "Sugerencias de windows eliminadas."
 #
 # Package Managers
 #

@@ -48,6 +48,8 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * Cambia el wallpaper por uno oscuro minimalista
   * Quita los iconos anclados por defecto en la barra de tareas
   * Quita `OneDrive` y lo deshabilita
+  * Quita `Cortana` y lo deshabilita
+  * Quita `Sugerencias de Windows`
 * `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # Uso:
