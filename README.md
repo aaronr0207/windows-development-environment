@@ -37,6 +37,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
 * `Homestead_config_example.yaml` un archivo de configuración básico para `homestead` como ejemplo
 * `hyper_config_basic` un archivo de configuración para `hyper` que pone `git-bash` como shell del terminal y un tema básico
 * `hyper_fix_ls_colors_zsh.md` tutorial para arreglar el contraste de los colores de las carpetas al hacer ls cuando se utiliza `zsh` junto a `hyper` 
+* `hyper_zsh_plugins.md` instalación y configuración de plugins para `zsh` 
 * `wallpaper.jpg` un wallpaper oscuro minimalista
 * `vscode-extensions.sh` ejemplo de script para automatizar la configuración de VSCode (para futuras actualizaciones de este repo)
 * Configuraciones adicionales:
