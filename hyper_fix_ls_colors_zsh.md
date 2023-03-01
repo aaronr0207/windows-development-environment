@@ -2,10 +2,11 @@ Si utilizas ZSH en la consola de homestead, los colores al hacer un ``ls`` tiene
 los archivos ``.bashrc`` y ``.zshrc`` y vamos a añadir al final de ambos, las siguientes lineas:
 
 ```
-LS_COLORS='ow=01;36;40'
-export LS_COLORS
+_ls_colors=":ow=01;33" 
+zstyle ':completion:*:default' list-colors "${(s.:.)_ls_colors}"
+LS_COLORS+=$_ls_colors
 ```
-Una vez añadidas ejecutamos los siguientes comandos
+Una vez añadidas ejecutamos los siguientes comandos o reiniciamos la sesión del terminal
 
 ```
 source ~/.bashrc
