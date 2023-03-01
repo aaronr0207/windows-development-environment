@@ -132,7 +132,7 @@ module.exports = {
 	  hyperline: {
     		plugins: [
      			"hostname",
-     			"ip",                                                                    
+     			"ip",
       		"cpu",
       		"memory",
       		"network",
@@ -153,7 +153,9 @@ module.exports = {
 	"hyper-afterglow",
 	"hyperline",
 	"hyper-manager",
-	"hyper-tab-icons"
+	"hyper-tab-icons",
+	"hyperterm-cursor",
+	"hyper-blink"
     ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
