@@ -33,6 +33,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * androidstudio 
   * vlc
   * sqlitebrowser
+  * composer
 
 * `Homestead_config_example.yaml` un archivo de configuración básico para `homestead` como ejemplo
 * `hyper_config_basic` un archivo de configuración para `hyper` que pone `git-bash` como shell del terminal y un tema básico

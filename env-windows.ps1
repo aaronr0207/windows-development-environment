@@ -146,6 +146,7 @@ choco install postman -y
 choco install androidstudio -y
 choco install vlc -y
 choco install sqlitebrowser -y
+choco install composer -y
 
 Update-Environment-Path
 
