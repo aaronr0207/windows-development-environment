@@ -1,4 +1,9 @@
 #
+# Vars
+#
+$phpIniPath = "C:\tools\php82\php.ini"
+$fileInfoExtension = "php_fileinfo.dll"
+#
 # Functions
 #
 
@@ -20,6 +25,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     Write-Warning "Debes ejecutar el script como administrador"
     Exit
 }
+
 
 #
 # Quitar OneDrive
@@ -147,8 +153,31 @@ choco install androidstudio -y
 choco install vlc -y
 choco install sqlitebrowser -y
 choco install composer -y
+choco install nodejs -y
 
 Update-Environment-Path
+
+
+# Check if the php.ini file exists
+if (Test-Path $phpIniPath) {
+    # Check if the extension is already enabled
+    $extensionEnabled = Get-Content $phpIniPath | Select-String -Pattern "^;?\s*extension\s*=\s*$extensionName"
+    if (!$extensionEnabled) {
+        # Enable the extension
+        (Get-Content $phpIniPath) | Foreach-Object {
+            if ($_ -match "^;?\s*;?\s*extension\s*=") {
+                $_ -replace "^;?\s*;?\s*extension\s*=", "extension="
+            } else {
+                $_
+            }
+        } | Set-Content $phpIniPath
+        Write-Host "La extensión $fileInfoExtension ha sido activada en $phpIniPath"
+    } else {
+        Write-Host "La extensión $fileInfoExtension ya está activada en $phpIniPath"
+    }
+} else {
+    Write-Host "No existe el archivo $phpIniPath "
+}
 
 # Poner el tema oscuro
 start "" "C:\Windows\Resources\Themes\themeB.theme"

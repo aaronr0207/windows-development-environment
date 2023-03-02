@@ -34,6 +34,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * vlc
   * sqlitebrowser
   * composer
+  * nodejs
 
 * `Homestead_config_example.yaml` un archivo de configuración básico para `homestead` como ejemplo
 * `hyper_config_basic` un archivo de configuración para `hyper` que pone `git-bash` como shell del terminal y un tema básico
@@ -63,8 +64,13 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
 .\env-windows.ps1
 ```
 
+Si no permite ejecutar scripts:
+```
+Set-ExecutionPolicy Unrestricted
+```
+
 # TODO:
 * Automatizar configuración de `VSCode` para `Laravel`
 * Incluir más plugins para `hyper` 
-* Quitar los programas anclados por defecto y anclar los que se usan
+* Anclar programas más usados al taskbar
 * Incluir software adicional o más herramientas de desarrollo
