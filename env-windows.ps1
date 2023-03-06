@@ -52,7 +52,6 @@ Write-Output "OneDrive eliminado y desactivado."
 # Quitar Cortana
 #
 
-
 # Disable Cortana
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Personalization\Settings" -Name "AcceptedPrivacyPolicy" -Type DWord -Value 0
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Type DWord -Value 1
@@ -154,6 +153,7 @@ choco install vlc -y
 choco install sqlitebrowser -y
 choco install composer -y
 choco install nodejs -y
+choco install keepass -y
 
 Update-Environment-Path
 
@@ -204,8 +204,6 @@ $taskbarLayout.Favorites = $taskbarLayout.Favorites -replace 'Microsoft\.Teams\.
 # Remove Desktops icon
 $taskbarLayout.Favorites = $taskbarLayout.Favorites -replace 'Microsoft\.Windows\.Desktops\.App', ''
 Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband' -Name 'Favorites' -Value $taskbarLayout.Favorites
-
-powershell -Command 'Remove-Item -Path "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*" -Force'
 
 # Reiniciar el proceso del explorador para que tengan efecto los cambios
 taskkill /f /im explorer.exe
