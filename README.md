@@ -53,6 +53,7 @@ Script que prepara un entorno Windows con los programas necesarios para desarrol
   * Quita `OneDrive` y lo deshabilita
   * Quita `Cortana` y lo deshabilita
   * Quita `Sugerencias de Windows`
+  * Ancla algunos programas al taskbar
 * `vagrant-winnfsd.md` instrucciones para dar los permisos pertinentes para poder utilizar el sistema de archivos `nfs`
 
 # Uso:
@@ -72,5 +73,4 @@ Set-ExecutionPolicy Unrestricted
 # TODO:
 * Automatizar configuración de `VSCode` para `Laravel`
 * Incluir más plugins para `hyper` 
-* Anclar programas más usados al taskbar
 * Incluir software adicional o más herramientas de desarrollo

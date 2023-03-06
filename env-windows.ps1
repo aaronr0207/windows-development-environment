@@ -240,6 +240,26 @@ foreach ($item in $desktop_items) {
     }
 }
 
+# Listado de aplicaciones que se van a anclar en la barra de tareas
+$executableNames = @("phpstorm64.exe", "sublime_text.exe", "explorer.exe","chrome.exe","Hyper.exe")
+
+# Loopea sobre el array anterior para buscarlas
+foreach ($executableName in $executableNames) {
+    # Localizar los ejecutables con Get-Command cmdlet
+    $executable = Get-Command $executableName -ErrorAction SilentlyContinue
+
+    # Si lo encuentra, lo pinea
+    if ($executable) {
+        # Pinear usando Shell.Application COM object
+        $shell = New-Object -ComObject Shell.Application
+        $item = $shell.Namespace((Get-Item $executable.Source).DirectoryName).ParseName((Get-Item $executable.Source).Name)
+        $verb = $item.Verbs() | where { $_.Name -eq 'Pin to Tas&kbar' }
+        if ($verb) {
+            $verb.DoIt()
+        }
+    }
+}
+
 # Crear carpetas para workspace
 cd ~
 mkdir workspace
