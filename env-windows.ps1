@@ -180,7 +180,7 @@ if (Test-Path $phpIniPath) {
 }
 
 # Poner el tema oscuro
-start "" "C:\Windows\Resources\Themes\themeB.theme"
+start "C:\Windows\Resources\Themes\themeB.theme"
 
 # Cambiar wallpaper
 cd ~
@@ -192,6 +192,19 @@ rm ~\wallpaper.jpg
 # Quitar los items anclados de la barra de tareas por defecto
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v Favorites /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband" /v "FavoritesResolve" /t REG_DWORD /d 0 /f
+# Remove Search, Chat, and Desktops icons from taskbar
+$taskbarLayout = (Get-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband' -Name 'Favorites')
+
+# Remove Search icon
+$taskbarLayout.Favorites = $taskbarLayout.Favorites -replace 'System\.Search\.HomeTile', ''
+
+# Remove Chat icon
+$taskbarLayout.Favorites = $taskbarLayout.Favorites -replace 'Microsoft\.Teams\.Chat', ''
+
+# Remove Desktops icon
+$taskbarLayout.Favorites = $taskbarLayout.Favorites -replace 'Microsoft\.Windows\.Desktops\.App', ''
+Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband' -Name 'Favorites' -Value $taskbarLayout.Favorites
+
 powershell -Command 'Remove-Item -Path "$env:APPDATA\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\*" -Force'
 
 # Reiniciar el proceso del explorador para que tengan efecto los cambios
@@ -204,12 +217,10 @@ start explorer.exe
 # Homestead basic setup
 
 cd ~
-mkdir workspace
-mkdir compartida
 git clone https://github.com/laravel/homestead.git homestead
 cd homestead
 git checkout release
-bash init.sh
+.\init.bat
 vagrant plugin install vagrant-winnfsd
 
 # Si se va a usar el sistema de archivos nfs hay que ejecutar los permisos (nota keep)
@@ -263,6 +274,7 @@ foreach ($executableName in $executableNames) {
 # Crear carpetas para workspace
 cd ~
 mkdir workspace
+mkdir compartida
 mkdir workspace-android
 
 Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la version de phpstorm)"
