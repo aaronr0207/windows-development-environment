@@ -110,14 +110,14 @@ if ($choice_ide -eq "1") {
         Write-Host "Opción no válida, elige 1 o 2"
     }
 } elseif ($choice_ide -eq "2") {
-   choco install vscode
+   choco install vscode -y
 } elseif ($choice_ide -eq "3") {
-   choco install vscode
+   choco install vscode -y
      $choice_version = Read-Host "Instalar última versión de PHPStorm o 2020.2.4 (versión licencia) (1 o 2)"
     if ($choice_version -eq "1") {
-        choco install phpstorm
+        choco install phpstorm -y
     } elseif ($choice_version -eq "2") {
-        choco install phpstorm 2020.2.4
+        choco install phpstorm 2020.2.4 -y
     } else {
         Write-Host "Opción no válida, elige 1 o 2"
     }
