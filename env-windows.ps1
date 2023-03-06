@@ -100,29 +100,29 @@ Get-Command -Module Microsoft.PowerShell.Archive
 $choice_ide = Read-Host "Instalar PHPStorm, VSCode o ambos (1,2 o 3)"
 
 if ($choice_ide -eq "1") {
-    $choice_version = Read-Host "Instalar última versión de PHPStorm o 2020.2.4 (versión licencia) (1 o 2)"
+    $choice_version = Read-Host "Instalar ultima version de PHPStorm o 2020.2.4 (version licencia) (1 o 2)"
     
-    if ($choice_version -eq "1") {
-        choco install phpstorm
-    } elseif ($choice_version -eq "2") {
-        choco install phpstorm 2020.2.4
-    } else {
-        Write-Host "Opción no válida, elige 1 o 2"
-    }
-} elseif ($choice_ide -eq "2") {
-   choco install vscode -y
-} elseif ($choice_ide -eq "3") {
-   choco install vscode -y
-     $choice_version = Read-Host "Instalar última versión de PHPStorm o 2020.2.4 (versión licencia) (1 o 2)"
     if ($choice_version -eq "1") {
         choco install phpstorm -y
     } elseif ($choice_version -eq "2") {
         choco install phpstorm 2020.2.4 -y
     } else {
-        Write-Host "Opción no válida, elige 1 o 2"
+        Write-Host "Opcion no valida, elige 1 o 2"
+    }
+} elseif ($choice_ide -eq "2") {
+   choco install vscode -y
+} elseif ($choice_ide -eq "3") {
+   choco install vscode -y
+     $choice_version = Read-Host "Instalar ultima version de PHPStorm o 2020.2.4 (version licencia) (1 o 2)"
+    if ($choice_version -eq "1") {
+        choco install phpstorm -y
+    } elseif ($choice_version -eq "2") {
+        choco install phpstorm 2020.2.4 -y
+    } else {
+        Write-Host "Opcion no valida, elige 1 o 2"
     }
 }else {
-    Write-Host "Opción no válida, elige 1 (PHPStorm), 2 (VSCode) o 3 (ambos)"
+    Write-Host "Opcion no valida, elige 1 (PHPStorm), 2 (VSCode) o 3 (ambos)"
 }
 
 choco install adobereader -y
@@ -171,9 +171,9 @@ if (Test-Path $phpIniPath) {
                 $_
             }
         } | Set-Content $phpIniPath
-        Write-Host "La extensión $fileInfoExtension ha sido activada en $phpIniPath"
+        Write-Host "La extension $fileInfoExtension ha sido activada en $phpIniPath"
     } else {
-        Write-Host "La extensión $fileInfoExtension ya está activada en $phpIniPath"
+        Write-Host "La extension $fileInfoExtension ya esta activada en $phpIniPath"
     }
 } else {
     Write-Host "No existe el archivo $phpIniPath "
@@ -245,4 +245,4 @@ cd ~
 mkdir workspace
 mkdir workspace-android
 
-Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la versión de phpstorm)"
+Write-Output "Finalizado! Ejecuta `choco upgrade all` si necesitas actualizar el software (cuidado con la version de phpstorm)"
