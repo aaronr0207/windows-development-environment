@@ -220,9 +220,11 @@ vagrant plugin install vagrant-winnfsd
 cd ~
 touch .bash_profile
 
-echo function homestead() {> .bash_profile
-echo     ( cd ~/Homestead && vagrant $* )>> .bash_profile
-echo }>> .bash_profile
+$content = 'function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}'
+
+Set-Content -Path "$env:USERPROFILE\.bash_profile" -Value $content -Encoding UTF8
 
 
 # Limpiar iconos del escritorio, menos la papelera de reciclaje
