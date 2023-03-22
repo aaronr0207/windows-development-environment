@@ -124,6 +124,14 @@ if ($choice_ide -eq "1") {
     Write-Host "Opcion no valida, elige 1 (PHPStorm), 2 (VSCode) o 3 (ambos)"
 }
 
+$citrix = Read-Host "¿Instalar Citrix XenServer?, elige 1 (si) o 2 (no)"
+if ($citrix -eq "1") {
+choco install xencenter
+} else {
+Write-Host "Opcion no valida, elige 1 o 2"
+}
+
+
 choco install adobereader -y
 choco install googlechrome -y
 choco install firefox -y
